@@ -7,7 +7,7 @@ import serve from 'koa-static'
 import koaBunyanLogger from 'koa-bunyan-logger'
 
 import { config } from './config';
-import { routes } from './router';
+import router from './router';
 import { logger } from './logs';
 
 const app = new Koa();
@@ -17,7 +17,7 @@ app.use(cors());
 app.use(koaBunyanLogger(logger));
 app.use(koaBunyanLogger.requestLogger());
 app.use(koaBunyanLogger.timeContext());
-app.use(routes);
+app.use(router.routes()).use(router.allowedMethods());
 app.use(serve(__dirname + '/public', {
   index: false,    // 默认为true  访问的文件为index.html  可以修改为别的文件名或者false
   hidden: false,   // 是否同意传输隐藏文件
@@ -25,5 +25,4 @@ app.use(serve(__dirname + '/public', {
 }))
 
 export const server = app.listen(config.port);
-
 console.log(`Server running on http://localhost:${config.port}`);
