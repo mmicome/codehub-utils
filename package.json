@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo init",
     "prepare": "husky install",
-    "sync:subtree": "git subtree pull --prefix=codehub-commons codehub-commons main --squash"
+    "sync:subtree": "git subtree pull --prefix=codehub-commons codehub-commons main --squash",
+    "sync:subtree:push": "git subtree push --prefix=codehub-commons codehub-commons main"
   },
   "repository": {
     "type": "git",
