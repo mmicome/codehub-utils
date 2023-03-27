@@ -1,5 +1,5 @@
 {
-  "name": "codehub-config",
+  "name": "codehub-spider",
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.js",
