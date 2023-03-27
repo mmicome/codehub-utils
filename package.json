@@ -1,0 +1,29 @@
+{
+  "name": "codehub-micro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo init",
+    "prepare": "husky install",
+    "sync:subtree": "git subtree pull --prefix=codehub-commons codehub-commons main --squash"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmicome/codehub-micro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmicome/codehub-micro/issues"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "homepage": "https://github.com/mmicome/codehub-micro#readme",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "2.8.7"
+  }
+}
