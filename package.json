@@ -1,5 +1,5 @@
 {
-  "name": "codehub-monitor",
+  "name": "codehub-sms",
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.js",
