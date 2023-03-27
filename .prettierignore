@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+dist
+output
+coverage
+node_modules
+.nyc_output
+.*
+.*/**/*
+yarn*
