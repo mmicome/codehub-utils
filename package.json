@@ -1,0 +1,41 @@
+{
+  "name": "codehub-micro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo init",
+    "start": "node ./scripts/run/index.js",
+    "lint": "eslint --resolve-plugins-relative-to . --ext .js,.ts .",
+    "fix": "eslint --resolve-plugins-relative-to . --ext .js,.ts --fix .",
+    "prepare": "husky install",
+    "sync:push": "node ./scripts/subtree/push",
+    "sync:pull": "node ./scripts/subtree/pull"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmicome/codehub-micro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmicome/codehub-micro/issues"
+  },
+  "lint-staged": {
+    "*": "prettier --write",
+    "*.ts": "npm run fix"
+  },
+  "homepage": "https://github.com/mmicome/codehub-micro#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "2.8.7",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.1"
+  }
+}

@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+dist
+output
+coverage
+node_modules
+.*
+*.log
+*.lock
