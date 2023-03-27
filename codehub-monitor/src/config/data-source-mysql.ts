@@ -1,7 +1,7 @@
-import { DataSource } from 'typeorm';
-import path from 'path';
+import { DataSource } from 'typeorm'
+import path from 'path'
 
-const entities = path.resolve(__dirname, '../model/mysql/*.entity.{ts,js}');
+const entities = path.resolve(__dirname, '../model/mysql/*.entity.{ts,js}')
 
 export const db = new DataSource({
   type: 'mysql',
@@ -11,8 +11,8 @@ export const db = new DataSource({
   password: '8376667249',
   database: 'test',
   synchronize: true,
-  logging: ['error'], //"query",
+  logging: ['query', 'error'],
   entities: [entities],
   subscribers: [],
   migrations: [],
-});
+})
