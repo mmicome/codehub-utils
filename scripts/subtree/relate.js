@@ -1,4 +1,5 @@
 const { execSync } = require('child_process');
+const { isChange, isConflict } = require('./utils');
 
 const modules = [
   'codehub-commons',
@@ -14,17 +15,14 @@ const modules = [
   'codehub-utils',
 ];
 
-let status = execSync(`git status -s`);
-let isChange = !!status.toString('utf8');
-let conflict = execSync(`git diff --check`);
-let isConflict = !!conflict.toString('utf8');
+
 const remote = execSync(`git remote`).toString('utf8').split('\n');
-if (isConflict) {
+if (isConflict()) {
   console.log('has conflict');
   return;
 }
 try {
-  isChange && !isConflict && execSync(`git add . && git commit -m "initial" && git push`);
+  isChange() && !isConflict() && execSync(`git add . && git commit -m "initial" && git push`);
 } catch (e) {
   console.log(e);
 }
@@ -39,11 +37,8 @@ modules.forEach((module) => {
     // console.log(e);
   }
   try {
-    let status = execSync(`git status -s`);
-    let isChange = !!status.toString('utf8');
-    let conflict = execSync(`git diff --check`);
-    let isConflict = !!conflict.toString('utf8');
-    isChange && !isConflict && execSync(`git add . && git commit -m "initial" && git push`);
+
+    isChange() && !isConflict() && execSync(`git add . && git commit -m "initial" && git push`);
   } catch (e) {
     // console.log(e);
   }
