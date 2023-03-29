@@ -20,3 +20,8 @@ router.get('/user/mysql/:name', async (ctx: DefaultContext) => {
   const users = await db.mysql.getRepository(User).findBy({ name: ctx.params.name });
   ctx.body = users;
 });
+
+router.get('/user/mysql/:name/test', async (ctx: DefaultContext) => {
+  const users = await db.mysql.getRepository(User).findBy({ name: ctx.params.name });
+  ctx.body = users;
+});

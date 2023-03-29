@@ -1,12 +1,12 @@
 // const glob = require('glob');
 // const path = require('path');
-import glob from 'glob'
+import glob from 'glob';
 
-export function load(dir:string) {
+export function load(dir: string) {
   const files = glob.sync(dir, {
     // absolute: true,
-    withFileTypes: true
-  })
+    withFileTypes: true,
+  });
   // Iterate over the matched files and require each one
   files.forEach((file) => {
     const component = import(file.fullpath());
