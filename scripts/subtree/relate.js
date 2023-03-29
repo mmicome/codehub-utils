@@ -31,7 +31,7 @@ modules.forEach((module) => {
   try {
     !remote.includes(module) &&
       execSync(`git remote add ${module} git@github.com:mmicome/${module}.git`);
-    execSync(`git subtree add --prefix=${module} ${module} main`);
+    execSync(`git subtree add --prefix=${module} ${module} main --squash`);
     console.log(`git subtree add --prefix=${module} ${module} main success!!`);
   } catch (e) {
     // console.log(e);
