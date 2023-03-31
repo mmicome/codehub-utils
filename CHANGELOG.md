@@ -1,4 +1,4 @@
-# codehub-microserve-utils
+# @microserves/codehub-utils
 
 ## 2.0.0
 
